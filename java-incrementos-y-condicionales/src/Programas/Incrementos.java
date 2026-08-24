@@ -3,7 +3,7 @@ package Programas;
 
 /**
  *
- * @author Andres Felipe Trochez Lugo
+ * @author Andres Felipe Trochez Lugo.
  */
 public class Incrementos {
     
