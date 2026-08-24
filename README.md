@@ -38,7 +38,18 @@ Aplicar los conceptos de preincremento (++variable), posincremento (variable++) 
 **2. Ejecutar el siguiente código y analizar sus resultados:**
 
 
-<img width="700" height="519" alt="Captura de pantalla 2026-08-24 173645" src="https://github.com/user-attachments/assets/386b2ebd-2b5d-405c-8024-6a035d318ec8" />
+<img width="700" height="519" alt="Captura de pantalla 2026-08-24 173645" src="https://github.com/user-attachments/assets/386b2ebd-2b5d-405c-8024-6a035d318ec8" />  
+
+- **Tabla comparativa de resultados**
+
+  
+  <img width="700" height="320" alt="image" src="https://github.com/user-attachments/assets/eb269dbf-1c02-49c5-8b35-9246f9477b09" />
+
+
+
+
+
+
 
   
 
