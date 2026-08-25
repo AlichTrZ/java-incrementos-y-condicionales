@@ -50,6 +50,30 @@ Aplicar los conceptos de preincremento (++variable), posincremento (variable++) 
 
 
 
+- **Ejemplos de aplicacion Preincremento y Posincremento**  
+    En una asignacion  
+  <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/6d0b9db3-830c-4c60-9e42-5f7d6301f23b" />
+
+
+
+  Con operaciones matematicas  
+  <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/33ca186f-ba82-44f3-a327-3ba3ce941bb2" />
+
+  Dentro de un ciclo for  
+  <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/f4b0172e-8335-404b-9863-2982edc0f256" />
+
+
+  
+
+  
+
+    
+
+
+
+
+
+
 
   
 
