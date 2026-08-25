@@ -88,7 +88,7 @@ El programa debe:
 - Total a pagar.
 
 ```java
- package Programas;
+package Programas;
 
 import java.util.Scanner;
 
@@ -99,56 +99,56 @@ import java.util.Scanner;
 public class Ejercicio1Descuentos {
     
     public static void main(String[] args) {
-    double valcompra;
-    double valordescontado;
-    double totalpago;
+    double valCompra;
+    double valorDescontado;
+    double totalPago;
     double descuento;
     
     
     
     Scanner sc = new Scanner(System.in);
         System.out.println("Por favor, digite el valor de la compra");   
-        valcompra=sc.nextDouble();
+        valCompra=sc.nextDouble();
         
-        if(valcompra>500000){
+        if(valCompra>500000){
         
-        descuento=valcompra*0.20;
-        valordescontado=descuento;
-        totalpago=valcompra-valordescontado;
+        descuento=valCompra*0.20;
+        valorDescontado=descuento;
+        totalPago=valCompra-valorDescontado;
         
             System.out.println("Tiene derecho a un 20% de descuento");
-            System.out.println("Valor descontado: "+valordescontado);
-            System.out.println("Total a pagar con descuento aplicado: "+totalpago);
+            System.out.println("Valor descontado: "+valorDescontado);
+            System.out.println("Total a pagar con descuento aplicado: "+totalPago);
         
     }
-        else if(valcompra>300000 && valcompra<=500000){
+        else if(valCompra>300000 && valCompra<=500000){
          
             
-        descuento=valcompra*0.15;
-        valordescontado=descuento;
-        totalpago=valcompra-valordescontado;
+        descuento=valCompra*0.15;
+        valorDescontado=descuento;
+        totalPago=valCompra-valorDescontado;
         
             System.out.println("Tiene derecho a un 15% de descuento");
-            System.out.println("Valor descontado: "+valordescontado);
-            System.out.println("Total a pagar con descuento aplicado: "+totalpago);
+            System.out.println("Valor descontado: "+valorDescontado);
+            System.out.println("Total a pagar con descuento aplicado: "+totalPago);
             
         }
         
-        else if(valcompra>=100000 && valcompra<=300000){
+        else if(valCompra>=100000 && valCompra<=300000){
             
-        descuento=valcompra*0.10;
-        valordescontado=descuento;
-        totalpago=valcompra-valordescontado;
+        descuento=valCompra*0.10;
+        valorDescontado=descuento;
+        totalPago=valCompra-valorDescontado;
         
             System.out.println("Tiene derecho a un 10% de descuento");
-            System.out.println("Valor descontado: "+valordescontado);
-            System.out.println("Total a pagar con descuento aplicado: "+totalpago);
+            System.out.println("Valor descontado: "+valorDescontado);
+            System.out.println("Total a pagar con descuento aplicado: "+totalPago);
             
         }
         
         else{
             System.out.println("Su compra no supera los $99.999, no tiene derecho a descuento.");
-            System.out.println("Total a pagar, sin descuento: "+valcompra);
+            System.out.println("Total a pagar, sin descuento: "+valCompra);
         }
      
            
@@ -161,7 +161,8 @@ public class Ejercicio1Descuentos {
 - **Evidencia de la ejecución del programa**
 
   
-  <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/9cc2e931-61cc-40ed-8b0b-4dab607c195f" />
+  <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/82b94d2f-8a84-4604-a603-331fa303788c" />
+
 
 
  - **Analisis del resultado**
@@ -261,7 +262,113 @@ public class Ejercicio2AccesoConjunto {
  Probé las 8 combinaciones posibles entre tarjeta, estado de la tarjeta y deudas, para asegurarme de que el programa respondiera bien sin importar el orden en que fallaran las condiciones. En todos los casos el resultado fue el esperado: primero se valida si tiene tarjeta, luego si está activa, y por último si tiene deudas, dando acceso solo cuando las tres cosas están en orden.
   
 
-  
+
+
+
+# Ejercicio 3. Plataforma de Transporte Compartido
+Nivel: Avanzado
+Tipo de estructura: Condiciones compuestas
+
+**Una aplicación de transporte asigna un conductor premium únicamente si:**  
+-Tiene calificación superior o igual a 4.8.  
+-Ha realizado más de 500 viajes.  
+-Se encuentra disponible.  
+
+
+Si cumple dos de las tres condiciones será asignado como conductor estándar.  
+En cualquier otro caso no podrá ser asignado.  
+
+
+**Requerimientos**  
+Solicitar:  
+-Calificación.  
+-Cantidad de viajes.  
+-Disponibilidad.  
+Mostrar el tipo de asignación.  
+
+
+
+
+```java
+package Programas;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Andres Felipe Trochez Lugo
+ */
+public class Ejercicio3Transporte {
+    
+    public static void main(String[] args) {
+        
+        double calificacion;
+        double cantViajes;
+        String disponible;
+        int condiciones=0;
+        
+        
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Ingrese su calificacion: ");
+        calificacion=sc.nextDouble();
+        
+        System.out.print("Ingrese la cantidad de viajes realizados: ");
+        cantViajes=sc.nextDouble();
+        
+        sc.nextLine(); //esto lo puse porque me estaba leyendo vacia la entrada "disponoble" y se saltaba directamente a terminar el codigo, sin dar
+                       //tiempo al usuario que digite la respuesta.
+        
+        System.out.println("Se encuentra con disponibilidad? Si/No: ");
+        disponible=sc.nextLine();
+        
+        if(calificacion>=4.8){
+        
+           condiciones++;
+    }
+        if (cantViajes>500){
+          condiciones++;
+    }
+        if(disponible.equalsIgnoreCase("Si")){
+            
+          condiciones++;
+        
+    }
+        
+        if(condiciones==3){
+            System.out.println("Estimado conductor, usted a sido asignado con categoria Premium");
+        }
+        
+                else if(condiciones==2){
+            System.out.println("Estimado conductor, usted a sido asignado con categoria Estandar");
+        }
+        
+                else{
+                    System.out.println("No cumple con los requisitos para ser asignado con alguna categoria");
+                }
+        
+        
+        
+        
+    
+    }
+}
+
+```
+
+
+- **Evidencia de la ejecución del programa**  
+
+
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/11d04811-0c63-4094-8391-1afa1c1161f2" />
+
+
+
+
+
+- **Analisis del resultado**  
+Probé las 8 combinaciones posibles entre calificación, viajes y disponibilidad, para revisar que el contador fuera sumando bien en cada caso. En todas las pruebas el resultado fue el correcto: Premium cuando se cumplen las 3 condiciones, Estándar cuando se cumplen exactamente 2, y sin asignación cuando se cumple 1 o ninguna.  
 
     
 
