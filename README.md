@@ -63,6 +63,202 @@ Aplicar los conceptos de preincremento (++variable), posincremento (variable++) 
   <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/f4b0172e-8335-404b-9863-2982edc0f256" />
 
 
+<h2>Parte 2 | Programacion con If</h2>      
+
+Desarrollar los siguientes ejercicios utilizando diferentes variantes de las estructuras condicionales de Java.  
+
+# Ejercicio 1. Sistema de Descuentos para un Supermercado  
+Nivel: Intermedio  
+Tipo de estructura: if - else if - else
+
+
+**Un supermercado ofrece descuentos de acuerdo con el valor de compra:**    
+• Menor a $100.000 → Sin descuento.  
+• Entre $100.000 y $300.000 → 10% de descuento.  
+• Entre $300.001 y $500.000 → 15% de descuento.  
+• Mayor a $500.000 → 20% de descuento.  
+
+**Requerimientos**    
+El programa debe:  
+- Solicitar el valor de la compra.  
+
+• Mostrar:  
+- Descuento aplicado.  
+- Valor descontado.  
+- Total a pagar.
+
+```java
+ package Programas;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Andres Felipe Trochez Lugo
+ */
+public class Ejercicio1Descuentos {
+    
+    public static void main(String[] args) {
+    double valcompra;
+    double valordescontado;
+    double totalpago;
+    double descuento;
+    
+    
+    
+    Scanner sc = new Scanner(System.in);
+        System.out.println("Por favor, digite el valor de la compra");   
+        valcompra=sc.nextDouble();
+        
+        if(valcompra>500000){
+        
+        descuento=valcompra*0.20;
+        valordescontado=descuento;
+        totalpago=valcompra-valordescontado;
+        
+            System.out.println("Tiene derecho a un 20% de descuento");
+            System.out.println("Valor descontado: "+valordescontado);
+            System.out.println("Total a pagar con descuento aplicado: "+totalpago);
+        
+    }
+        else if(valcompra>300000 && valcompra<=500000){
+         
+            
+        descuento=valcompra*0.15;
+        valordescontado=descuento;
+        totalpago=valcompra-valordescontado;
+        
+            System.out.println("Tiene derecho a un 15% de descuento");
+            System.out.println("Valor descontado: "+valordescontado);
+            System.out.println("Total a pagar con descuento aplicado: "+totalpago);
+            
+        }
+        
+        else if(valcompra>=100000 && valcompra<=300000){
+            
+        descuento=valcompra*0.10;
+        valordescontado=descuento;
+        totalpago=valcompra-valordescontado;
+        
+            System.out.println("Tiene derecho a un 10% de descuento");
+            System.out.println("Valor descontado: "+valordescontado);
+            System.out.println("Total a pagar con descuento aplicado: "+totalpago);
+            
+        }
+        
+        else{
+            System.out.println("Su compra no supera los $99.999, no tiene derecho a descuento.");
+            System.out.println("Total a pagar, sin descuento: "+valcompra);
+        }
+     
+           
+}
+
+}
+
+```
+
+- **Evidencia de la ejecución del programa**
+
+  
+  <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/9cc2e931-61cc-40ed-8b0b-4dab607c195f" />
+
+
+ - **Analisis del resultado**
+   
+   Probé el programa con los valores límite de cada rango (99.999, 100.000, 300.000, 300.001, 500.000 y 500.001) para asegurarme de que el descuento se calculara bien en los casos más "riesgosos", es decir, justo en el borde entre un rango y otro. En todas las pruebas el resultado fue el esperado, así que la estructura if / else if / else está funcionando correctamente y cada valor cae en el rango que le corresponde.
+
+
+
+# Ejercicio 2. Control Inteligente de Acceso a un Conjunto Residencial  
+Nivel: Intermedio - Avanzado
+Tipo de estructura: if anidados  
+
+**Para ingresar al conjunto residencial se verifica:**  
+1. Si el residente tiene tarjeta de acceso.  
+2. Si la tarjeta está activa.  
+3. Si no posee deudas de administración.
+
+**Requerimientos**  
+
+**Solicitar:**   
+• Tiene tarjeta (Sí/No)  
+• Tarjeta activa (Sí/No)  
+• Tiene deudas (Sí/No)  
+
+**El sistema debe indicar:**  
+• Acceso permitido.  
+• Acceso restringido por tarjeta inactiva.  
+• Acceso restringido por mora.  
+• Acceso denegado por ausencia de tarjeta.  
+
+
+```java
+package Programas;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Andres Felipe Trochez Lugo
+ */
+public class Ejercicio2AccesoConjunto {
+    public static void main(String[] args) {
+        
+        String tarjeta;
+        String estadotar;
+        String deuda;
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Posee tarjeta de acceso?, Si/No: ");
+        tarjeta=sc.nextLine();
+        
+        
+       
+        System.out.println("Su tarjeta se encuentra activa?, Si/No: ");
+        estadotar=sc.nextLine();
+        
+        System.out.println("Posee deudas?, Si/No: ");
+        deuda=sc.nextLine();
+        
+        
+        if(tarjeta.equalsIgnoreCase("No")){
+            
+            System.out.println("Accedor Denegado por Ausencia de Tarjeta");
+                         
+        }
+        else if(estadotar.equalsIgnoreCase("No")){
+            System.out.println("Acceso Restringido por Tarjeta Inactiva.");
+            
+        }
+        
+        else if(deuda.equalsIgnoreCase("Si")){
+            System.out.println("Acceso Restringido por Mora.");
+        }
+        
+        else{
+            System.out.println("Acceso permitido.");
+        }
+        
+            
+              
+    }
+    
+}
+
+```
+
+
+- **Evidencia de la ejecución del programa**
+
+
+  <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/bba501de-1ba6-4ace-b8cb-48253e63da2b" />
+
+
+
+
+- **Analisis del resultado**  
+ Probé las 8 combinaciones posibles entre tarjeta, estado de la tarjeta y deudas, para asegurarme de que el programa respondiera bien sin importar el orden en que fallaran las condiciones. En todos los casos el resultado fue el esperado: primero se valida si tiene tarjeta, luego si está activa, y por último si tiene deudas, dando acceso solo cuando las tres cosas están en orden.
   
 
   
