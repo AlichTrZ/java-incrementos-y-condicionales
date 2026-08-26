@@ -370,6 +370,125 @@ public class Ejercicio3Transporte {
 - **Analisis del resultado**  
 Probé las 8 combinaciones posibles entre calificación, viajes y disponibilidad, para revisar que el contador fuera sumando bien en cada caso. En todas las pruebas el resultado fue el correcto: Premium cuando se cumplen las 3 condiciones, Estándar cuando se cumplen exactamente 2, y sin asignación cuando se cumple 1 o ninguna.  
 
+
+
+
+
+
+# Ejercicio 4. Sistema de Aprobación de Crédito Bancario
+Nivel: Avanzado  
+Tipo de estructura: if - else if con operadores lógicos  
+
+**Un banco estudia solicitudes de crédito bajo las siguientes condiciones:**  
+
+**Crédito Aprobado**  
+-Ingresos mayores a $5.000.000.  
+-Puntaje crediticio superior a 750.  
+-Antigüedad laboral mayor a 2 años.  
+
+**Crédito Condicionado**  
+Si cumple al menos dos de los criterios anteriores.  
+
+**Crédito Rechazado**  
+Si solamente cumple uno o ninguno.  
+
+**Requerimientos**  
+Solicitar la información del cliente y mostrar el resultado de la evaluación.  
+
+```java
+package Programas;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Andres Felipe Trochez Lugo
+ */
+public class Ejercicio4Credito {
+    public static void main(String[] args) {
+        
+        String ingresos;
+        double puntajeCredito;
+        double antiguedad;
+        int condiciones=0;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Bienvenido a nuestro sistema de creditos...");
+        
+        System.out.print("Sus ingresos son superiores a $5.000.000?: ");
+        ingresos=sc.nextLine();
+        
+        System.out.print("Favor, ingresar su puntaje crediticio: ");
+        puntajeCredito=sc.nextDouble();
+        
+        System.out.print("Favor, ingresar la cantidad de años de antiguedad laboral: ");
+        antiguedad=sc.nextDouble();
+        
+        if(ingresos.equalsIgnoreCase("Si")){
+            
+            condiciones++;
+            
+        }
+        
+        if(puntajeCredito>750){
+            
+            condiciones++;
+        }
+        
+        if(antiguedad>2){
+            condiciones++;
+        }
+        
+        
+        
+        if(condiciones==3){
+            System.out.println("--EVALUCACION--");
+            System.out.println("Ingresos: "+ingresos);
+            System.out.println("Puntaje Crediticio: "+puntajeCredito);
+            System.out.println("Antiguedad Laboral "+antiguedad);
+            System.out.println("");
+            System.out.println("¡Credito Aprobado!");
+                    
+        }
+        
+        else if(condiciones==2){
+            System.out.println("--EVALUCACION--");
+            System.out.println("Ingresos: "+ingresos);
+            System.out.println("Puntaje Crediticio: "+puntajeCredito);
+            System.out.println("Antiguedad Laboral "+antiguedad);
+            System.out.println("");
+            System.out.println("¡Credito Condicionado!");
+        }
+        
+        else{
+            System.out.println("--EVALUCACION--");
+            System.out.println("Ingresos superiores a $5.000.000?: "+ingresos);
+            System.out.println("Puntaje Crediticio: "+puntajeCredito);
+            System.out.println("Antiguedad Laboral: "+antiguedad);
+            System.out.println("");
+            System.out.println("¡Credito Rechazado! - No cumple con los requisitos minimos para acceder a un credito");
+        }
+        
+                
+    }
+    
+}
+
+```
+
+
+- **Evidencia de la ejecución del programa**
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/3b9c7122-3d56-4a27-a39b-a9b2edb50f11" />
+
+
+
+- **Analisis del resultado**  
+  Le hice pruebas a las 8 combinaciones posibles entre ingresos, puntaje y antigüedad laboral, para asegurarme de que el contador sumara bien sin importar cuál condición se cumpliera. Todo dio como se esperaba: aprobado cuando se cumplen las 3, condicionado con exactamente 2, y rechazado con 1 o ninguna.
+
+
+
+
     
 
 
