@@ -3,7 +3,7 @@
 Se desarrollan varios ejercicios enfocados al uso de condicionales e incrementos. Taller 1 POO  
 
 **Presenta:** Andres Felipe Trochez Lugo  
-**Programa Academico:** Tecnologia en Desarrollo de Software <
+**Programa Academico:** Tecnologia en Desarrollo de Software 
 
 # Objetivo General
 
@@ -487,9 +487,141 @@ public class Ejercicio4Credito {
   Le hice pruebas a las 8 combinaciones posibles entre ingresos, puntaje y antigüedad laboral, para asegurarme de que el contador sumara bien sin importar cuál condición se cumpliera. Todo dio como se esperaba: aprobado cuando se cumplen las 3, condicionado con exactamente 2, y rechazado con 1 o ninguna.
 
 
+# Ejercicio 5. Sistema de Viajes de una Aerolínea
+Nivel: Avanzado  
+Tipo de estructura: if anidados + condiciones múltiples  
 
 
+**Una aerolínea desea clasificar a sus pasajeros:**  
+
+**Categoría Oro**  
+-Más de 50 vuelos en el año.  
+-Membresía activa.  
+
+**Categoría Plata**  
+-Entre 20 y 50 vuelos.  
+-Membresía activa.  
+
+**Categoría Básica**  
+-Menos de 20 vuelos.  
+-O no posee membresía.  
+
+**Además:**  
+-Si el pasajero es categoría Oro y tiene más de 70 vuelos, recibe acceso VIP.  
+
+**Requerimientos**  
+Mostrar:  
+• Categoría obtenida.  
+• Si tiene acceso VIP.  
+
+
+
+ ```java
+package Programas;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Andres Felipe Trochez Lugo
+ */
+public class Ejercicio5Aerolinea {
     
+    public static void main(String[] args) {
+        
+        int vuelos;
+        String membresia;
+        
+        
+        System.out.println("Bienvenido a nuestro sistema de categorias.");
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Favor ingresar su cantida de vuelos: ");
+        vuelos=sc.nextInt();
+        
+        sc.nextLine();//esto lo puse porque me estaba leyendo vacia la entrada "disponoble" y se saltaba directamente a terminar el codigo, sin dar
+                       //tiempo al usuario que digite la respuesta.
+        
+        System.out.print("Posee membresia? Si/No: ");
+        membresia=sc.nextLine();
+        
+        if(vuelos>70 && membresia.equalsIgnoreCase("Si")){
+            
+            System.out.println("--Evaluacion de Categoria--");
+            System.out.println("");
+            System.out.println("Categoria Asignada: Oro");
+            System.out.println("Acceso VIP: Si.");
+            
+        }
+        
+        else if(vuelos>50 && membresia.equalsIgnoreCase("Si")){
+            
+            System.out.println("--Evaluacion de Categoria--");
+            System.out.println("");
+            System.out.println("Categoria Asignada: Oro");
+            System.out.println("Acceso VIP: No.");
+        }
+        
+        else if(vuelos>=20 && vuelos<=50 && membresia.equalsIgnoreCase("Si")){
+            System.out.println("--Evaluacion de Categoria--");
+            System.out.println("");
+            System.out.println("Categoria Asignada: Plata");
+            System.out.println("Acceso VIP: No.");
+        }
+        
+        else{
+            System.out.println("--Evaluacion de Categoria--");
+            System.out.println("");
+            System.out.println("Categoria Asignada: Basica");
+            System.out.println("Acceso VIP: No.");
+        }
+        
+        
+    }
+    
+}
+
+```
+
+
+
+- **Evidencia de la ejecución del programa**
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/ff8000dd-ac4c-4561-8603-e27371a3a79c" />
+
+
+
+
+- **Analisis del resultado**
+Probé varios casos combinando cantidad de vuelos y membresía, y en todos el programa asignó bien la categoría (Oro, Plata o Básica) y detectó el acceso VIP solo cuando debía. Lo interesante es que ni siquiera tuve que validar directamente lo de "sin membresía", porque el else final ya se encarga de cubrir ese caso.  
+
+
+
+
+# ¿Qué dificultades y aprendizajes encontré durante el desarrollo?
+
+- Al principio me costó entender bien la diferencia entre preincremento y posincremento, sobre todo cuando se usaban dentro de una asignación o mezclados en una misma expresión.  
+
+- Me confundí pensando que la variable de control del for (como contador) tenía alguna relación con otra variable que usaba dentro del ciclo (i), cuando en realidad eran totalmente independientes.  
+
+- Me salieron varios errores de variable no inicializada, porque usaba variables como descuento o condiciones sin haberles dado un valor inicial en todos los caminos posibles del código.  
+
+- Se me olvidó cerrar llaves en algunos if y métodos, lo que me generaba errores como "reached end of file while parsing".  
+
+- En un punto intenté declarar el Scanner dos veces dentro del mismo método, sin darme cuenta de que solo debía crearlo una vez y reutilizarlo.  
+
+- Aprendí que en Java no se puede comparar texto con ==, sino que hay que usar .equals() o .equalsIgnoreCase(). Que a la final me convenció mucho más la segunda opción, porque tomaba en general la palabra, admitía minúsculas o mayúsculas y aún así evaluaba lo que necesitaba.  
+
+- En los ejercicios donde tenía que contar cuántas condiciones se cumplían (como el de transporte o el de crédito), al principio encadené todo con else if, lo que hacía que no se evaluaran todas las condiciones por separado. Tuve que corregirlo usando if independientes para contar, y dejar el else if solo para mostrar el resultado final.  
+
+- Tuve un problema con el Scanner, porque al leer un número con nextDouble() o nextInt() y luego intentar leer texto con nextLine(), la entrada de texto se leía vacía. Tocó agregar un nextLine() extra para "limpiar" ese salto de línea pendiente.  
+
+- En un ejercicio mezclé .equals() y .equalsIgnoreCase() sin darme cuenta, lo que hacía que algunas respuestas en minúscula no se reconocieran bien.  
+
+- También me tocó corregir el nombre de algunas variables porque no seguían bien la convención camelCase, como estadotar en vez de estadoTarjeta, algo que no generaba error pero sí afectaba la legibilidad del código.  
+
+
+  
+
 
 
 
