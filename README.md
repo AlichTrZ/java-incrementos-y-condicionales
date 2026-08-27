@@ -3,8 +3,8 @@
 Se desarrollan varios ejercicios enfocados al uso de condicionales e incrementos. Taller 1 POO  
 
 **Presenta:** Andres Felipe Trochez Lugo  
-**Programa Academico:** Tecnologia en Desarrollo de Software 
-**Fecha de Entrega: 26 de agosto del 2026.
+**Programa Academico:** Tecnologia en Desarrollo de Software   
+**Fecha de Entrega:** 26 de agosto del 2026.  
 
 # Objetivo General
 
